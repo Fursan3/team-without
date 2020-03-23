@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+<ng-container class="container">
+  <main class="row d-flex justify-content-between ">
+    <!-- ------------------------------------------Left Side------------------------------------------ -->
+    <section class="col-5 d-flex justify-content-center border border-primary bg-light">
+      <!-- ------------------------------------------checkBox Grp------------------------------------------ -->
+      <form class="w-100">
+        <!-- ------------------------------------------Name------------------------------------------ -->
+        <div class="form-group">
+          <label for="Name">Full Name</label>
+          <input (ngModel)="Name" type="text" class="form-control" id="Name" aria-describedby="NameHelp">
+          <small *ngIf="Name == ''" id="NameHelp" class="form-text text-muted">Please fill your name.</small>
+        </div>
+        <!-- ------------------------------------------Company------------------------------------------ -->
+        <div class="form-group">
+          <label for="Company">Company</label>
+          <input type="text" class="form-control" id="Company" aria-describedby="CompanyHelp">
+          <small id="CompanyHelp" class="form-text text-muted">Optional</small>
+        </div>
+        <!-- ------------------------------------------Email------------------------------------------ -->
+        <div class="form-group">
+          <label for="Email">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="EmailHelp">
+          <small id="EmailHelp" class="form-text text-muted">Please fill your Email address so we can contact you
+            back.</small>
+        </div>
+        <!-- ------------------------------------------Title------------------------------------------ -->
+        <div class="form-group">
+          <label for="Title">Title of the issue</label>
+          <input type="text" class="form-control" id="Title" aria-describedby="TitleHelp">
+          <small id="TitleHelp" class="form-text text-muted">Please fill the title of your issue.</small>
+        </div>
+        <!-- ------------------------------------------Issue------------------------------------------ -->
+        <div class="form-group">
+          <label for="Issue">Issue</label>
+          <textarea class="form-control" id="Issue" aria-describedby="IssueHelp"></textarea>
+          <small id="IssueHelp" class="form-text text-muted">Please fill your Issue.</small>
+        </div>
+        <!-- ------------------------------------------checkBox Grp------------------------------------------ -->
+        <div class="form-group form-check d-flex justify-content-around">
+          <p>The subject is related to:</p>
+          <div>
+            <input type="checkbox" class="form-check-input" id="Check1">
+            <label class="form-check-label" for="Check1">Project</label>
+          </div>
+          <div>
+            <input type="checkbox" class="form-check-input" id="Check2">
+            <label class="form-check-label" for="Check2">work</label>
+          </div>
+          <div>
+            <input type="checkbox" class="form-check-input" id="Check3">
+            <label class="form-check-label" for="Check3">Problem</label>
+          </div>
+        </div>
+        <!-- ------------------------------------------Submit ------------------------------------------ -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+    <!-- ------------------------------------------Right Side------------------------------------------ -->
+    <section class="col-5 order border-primary ">
+      <agm-map [latitude]="33.301493" [longitude]="44.42329" class="map"></agm-map>
+      <br>
+      <hr class="col-6">
+      <address>
+        <strong>The M's Team</strong>
+        <p>
+          Iraq - Baghdad <br>
+          Al-Karrada Dakhil St.<br>
+          +9647705675477
+        </p>
+      </address>
+    </section>
+  </main>
+</ng-container>
